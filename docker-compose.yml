@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  qrcode:
+    build: .
+    stdin_open: true #docker run -i
+    tty: true #docker run -t
+    environment:
+      QR_CODE_IMAGE_DIRECTORY: 'images'
+      QR_CODE_DEFAULT_URL: 'https://bit.ly/nabilelmaalem' #My personal website link
+      QR_CODE_DEFAULT_FILE_NAME: 'NabilElMaalemQRCode.png' #Updated image Name
+    volumes:
+      - .:/home/myuser
